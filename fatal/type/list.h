@@ -1377,10 +1377,10 @@ struct type_list {
    *  template <typename T>
    *  struct double_getter: public std::integral_constant<int, T::value * 2> {};
    *
-   *  // yields `sequence<0, 1, 2>`
+   *  // yields `sequence<int, 0, 1, 2>`
    *  typedef list::apply_type_values<int, sequence> result1;
    *
-   *  // yields `sequence<0, 2, 4>`
+   *  // yields `sequence<int, 0, 2, 4>`
    *  typedef list::apply_type_values<int, sequence, double_getter> result2;
    *
    * @author: Marcelo Juchem <marcelo@fb.com>
@@ -1952,7 +1952,7 @@ struct type_list {
    *  //   short
    *  //   bool
    *  // >`
-   *  using result2 = list::flatten<2>;
+   *  using result3 = list::flatten<3>;
    *
    * @author: Marcelo Juchem <marcelo@fb.com>
    */
