@@ -43,6 +43,16 @@ public:
   typedef typename as_sequence::type char_type;
 
   /**
+   * The `std::basic_string` type corresponding to this `type_string`.
+   * Defaults to `std::char_traits` and `std::allocator`.
+   */
+  template <
+    typename TTraits = default_char_traits,
+    typename TAllocator = default_allocator
+  >
+  using string_type = std::basic_string<char_type, TTraits, TAllocator>;
+
+  /**
    * Constructs a `std::basic_string` corresponding to this
    * `type_string`, using the given character traits and allocator.
    * Defaults to `std::char_traits` and `std::allocator`.
@@ -56,12 +66,6 @@ public:
    *  // yields `std::string("hi")`
    *  auto result = hi::string();
    */
-  template <
-    typename TTraits = default_char_traits,
-    typename TAllocator = default_allocator
-  >
-  using string_type = std::basic_string<char_type, TTraits, TAllocator>;
-
   template <
     typename TTraits = default_char_traits,
     typename TAllocator = default_allocator
